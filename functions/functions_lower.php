@@ -478,25 +478,7 @@ function editJasa($id) {
 
 }
 
-function deletespareparts($id) {
-    global $conn;
-    checkRole(['admin', 'gudang', 'kasir']);
-    $stmt = mysqli_prepare($conn, "CALL hapus_sparepart(?)");
-    mysqli_stmt_bind_param($stmt, "i", $id);
-    $result = mysqli_stmt_execute($stmt);
-    if ($result) {
-        // Redirect to the inventaris.php page after successful deletion
-        header("Location: ../pages/inventaris.php");
-        exit;
-        return true; // Return true if deletion is successful
-        mysqli_stmt_close($stmt);
-    } else {
-        // Handle the error (e.g., display an error message)
-        echo "Error deleting sparepart." . mysqli_error($conn);
-        return false; // Return false if there's an error
-    }
-    return $result;
-}
+ 
 
 function deletejasa($id) {
 
