@@ -3,6 +3,9 @@
 // Sertakan file functions.php
 require_once '../../functions/functions.php';
 
+
+
+
 // Tangani submit formulir login
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (isset($_POST['login'])) {
@@ -11,6 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           // Login berhasil, hapus isi formulir login
           unset($_POST['username']);
           unset($_POST['password']);
+		  $userip = $_SERVER['REMOTE_ADDR'];
+		  $_POST[$userip];
       }
   } elseif (isset($_POST['signup'])) {
       // Tombol signup ditekan
@@ -19,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           unset($_POST['username']);
           unset($_POST['role']);
           unset($_POST['password']);
+		  $userIp = $_SERVER['REMOTE_ADDR'];
       }
   }
 }

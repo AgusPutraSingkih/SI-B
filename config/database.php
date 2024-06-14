@@ -3,7 +3,7 @@
 $db_host = 'localhost'; 
 $db_user = 'root';      
 $db_pass = '';          
-$db_name = 'bengkel_motor'; 
+$db_name = 'bengkelsaja'; 
 
 // Membuat koneksi
 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);

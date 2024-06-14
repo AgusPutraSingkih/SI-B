@@ -4,6 +4,8 @@ checkRole(['admin', 'gudang', 'kasir']);
 $transactions = getTransaksi();
 
 $transactionDetails = getDetailTransaksi();
+$no_Transaksi = 0;
+$no_detail = 0;
 ?>
 
 <!DOCTYPE html>
@@ -372,6 +374,7 @@ Sistem Informasi Bengkel
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Mekanik</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama Pelanggan</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Jenis Kendaraan</th>
@@ -386,6 +389,8 @@ Sistem Informasi Bengkel
                     <?php if (!empty($transactions)): ?>
                       <?php foreach ($transactions as $transaction): ?>
                         <tr>
+                          <td>
+                            <p class="text-xs font-weight-bold mb-0"><?php echo ++$no_Transaksi; ?></p>
                           <td>
                             <div class="d-flex px-2 py-1">
                               <div>
@@ -442,6 +447,7 @@ Sistem Informasi Bengkel
                 <table class="table align-items-center justify-content-center mb-0">
                   <thead>
                     <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Pelanggan</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Jenis Transaksi</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Sparepart</th>
@@ -454,6 +460,8 @@ Sistem Informasi Bengkel
                     <?php if (!empty($transactionDetails)): ?>
                       <?php foreach ($transactionDetails as $detail): ?>
                         <tr>
+                          <td>
+                            <p class="text-xs font-weight-bold mb-0"><?php echo ++$no_detail; ?></p>
                           <td>
                             <div class="d-flex px-2">
                               <div class="my-auto">
